@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep  1 17:13:02 2020
+
+@author: baxcruiser
+"""
+n=int(input())
+ar=list(map(int,input().strip.split()))
+pairs = 0
+for element in set(ar):
+        pairs += ar.count(element) // 2
+print(pairs)
