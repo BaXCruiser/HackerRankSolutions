@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep  1 18:05:54 2020
+
+@author: baxcruiser
+"""
+s = input()
+n = int(input())
+print(s.count('a')*(n//len(s))+s[0:n%len(s)].count('a'))
