@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 15 23:46:12 2020
+
+@author: baxcruiser
+"""
+import os
+
+def isValid(s):
+    k=[s.count(e) for e in set(s)]
+    if min(k)==max(k)-1 and k.count(max(k))<k.count(min(k)):
+        k[k.index(max(k))]=max(k)-1
+    if min(k)==1 and k.count(min(k))<k.count(max(k)):
+        k.remove(1)
+    pass
+    if max(k)!=min(k):
+        return 'NO'
+    else:
+        return 'YES'
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = isValid(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
