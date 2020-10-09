@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct  9 09:59:04 2020
+
+@author: baxcruiser
+"""
+
+
+def solve(n):
+    if n==1:
+        return [1,1]
+    l=[1,n]
+    for i in range (2,(n//2)+1):
+        res=1
+        res2=1 
+        z=i
+        x=n
+        while (z>0):
+            res=res*x
+            res2=res2*z
+            x-=1
+            z-=1
+        l.append((res//res2)%1000000000)
+    if (n%2==0):
+        l2=l[:len(l)-1]
+        l.extend(l2[::-1])
+    else:
+        l.extend(l[::-1])
+    return l
+
+
+
+if __name__ == '__main__':
+    t = int(input())
+    for t_itr in range(t):
+        n = int(input())
+        result = solve(n)
+        print(' '.join(map(str, result)))
